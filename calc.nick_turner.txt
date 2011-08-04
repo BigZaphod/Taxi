@@ -1,0 +1,272 @@
+[calc - a four function reverse polish calculator ]
+[       written in the Taxi programming language. ]
+[calc by N.Turner 2007 (tyr.arcana -at- gmail.com)]
+[                           License: Public Domain]
+[Taxi by BigZaphod (sean -at- fifthace.com)       ]
+[                           License: Public Domain]
+[          http://www.bigzaphod.org/taxi/         ]
+
+[greeting]
+"calc - a four function reverse polish calculator\n" is waiting at the Writer's Depot.
+"Enter values and operators one at a time, separated by newlines\n" is waiting at the Writer's Depot.
+"Valid operators are: +, -, *, /, top, empty, bye.\n" is waiting at the Writer's Depot.
+Go to Writer's Depot: west 1st left, 2nd right, 1st left, 2nd left.
+Pickup a passenger going to the Post Office.
+Pickup another passenger going to the Post Office.
+Pickup another passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+[input]
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: south 1st right, 1st left, 1st right, 1st right.
+Go to the Cyclone: west.
+[check bye]
+"bye" is waiting at the Writer's Depot.
+Pickup a passenger going to Little League Field.
+Go to the Writer's Depot: south.
+Pickup a passenger going to the Crime Lab.
+Go to Little League Field: north 1st right, 2nd right, 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: east 1st right, 1st right, 2nd right.
+Switch to plan "check plus" if no one is waiting.
+[print and quit]
+Go to Narrow Path Park: north 5th left.
+Switch to plan "just quit" if no one is waiting.
+Pickup a passenger going to The Babelfishery.
+Go to The Babelfishery: east 1st right.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st left, 1st right.
+Go to the Taxi Garage: north 1st right, 1st left, 1st right.
+[just quit]
+Go to the Taxi Garage: east 1st right, 5th left.
+[check plus]
+"+" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Cyclone: North.
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: north.
+Go to the Cyclone: west.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: south 1st left, 2nd right, 2nd left.
+Switch to plan "check minus" if no one is waiting.
+[cleanup]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Go to KonKat's: north 2nd right, 2nd right.
+Pickup a passenger going to Riverview Bridge.
+[do plus]
+Go to Narrow Path Park: north 2nd left.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup a passenger going to Addition Alley.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup another passenger going to Addition Alley.
+Go to Riverview Bridge: west 1st left, 1st right.
+Go to Addition Alley: west 1st left.
+Pickup a passenger going to Narrow Path Park.
+Go to Narrow Path Park: north 1st right, 1st left, 1st right.
+Go to the Post Office: east 1st right, 4th right, 1st left.
+Switch to plan "input".
+[check minus]
+"-" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Cyclone: North.
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: north.
+Go to the Cyclone: west.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: south 1st left, 2nd right, 2nd left.
+Switch to plan "check mult" if no one is waiting.
+[cleanup]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Go to KonKat's: north 2nd right, 2nd right.
+Pickup a passenger going to Riverview Bridge.
+[do minus]
+Go to Narrow Path Park: north 2nd left.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup a passenger going to Sunny Skies Park.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup a passenger going to What's The Difference.
+Go to Riverview Bridge: west 1st left, 1st right.
+Go to Sunny Skies Park: west 2nd left, 1st left.
+Pickup a passenger going to What's The Difference.
+Go to What's The Difference: north 1st right, 1st left.
+Pickup a passenger going to Narrow Path Park.
+Go to Narrow Path Park: east 2nd left, 1st right.
+Go to the Post Office: east 1st right, 4th right, 1st left.
+Switch to plan "input".
+[check mult]
+"*" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Cyclone: North.
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: north.
+Go to the Cyclone: west.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: south 1st left, 2nd right, 2nd left.
+Switch to plan "check div" if no one is waiting.
+[cleanup]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Go to KonKat's: north 2nd right, 2nd right.
+Pickup a passenger going to Riverview Bridge.
+[do mult]
+Go to Narrow Path Park: north 2nd left.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup a passenger going to Multiplication Station.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup another passenger going to Multiplication Station.
+Go to Riverview Bridge: west 1st left, 1st right.
+Go to Multiplication Station: east 1st right, 3rd left, 1st right.
+Pickup a passenger going to Narrow Path Park.
+Go to Narrow Path Park: north 2nd left, 1st right, 4th left.
+Go to the Post Office: east 1st right, 4th right, 1st left.
+Switch to plan "input".
+[check div]
+"/" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Cyclone: North.
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: north.
+Go to the Cyclone: west.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: south 1st left, 2nd right, 2nd left.
+Switch to plan "check top" if no one is waiting.
+[cleanup]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Go to KonKat's: north 2nd right, 2nd right.
+Pickup a passenger going to Riverview Bridge.
+[do div]
+Go to Narrow Path Park: north 2nd left.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup a passenger going to Joyless Park.
+Switch to plan "stack underflow" if no one is waiting.
+Pickup a passenger going to Divide and Conquer.
+Go to Riverview Bridge: west 1st left, 1st right.
+Go to Joyless Park: east 1st right, 2nd left.
+Pickup a passenger going to Divide and Conquer.
+Go to Divide and Conquer: west 1st right, 1st left.
+Pickup a passenger going to Narrow Path Park.
+Go to Narrow Path Park: east 1st left, 2nd left.
+Go to the Post Office: east 1st right, 4th right, 1st left.
+Switch to plan "input".
+[check top]
+"top" is waiting at the Writer's Depot.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: north.
+Go to the Cyclone: west.
+Pickup a passenger going to Little League Field.
+Go to the Writer's Depot: south.
+Pickup a passenger going to the Crime Lab.
+Go to Little League Field: north 1st right, 2nd right, 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: east 1st right, 1st right, 2nd right.
+Switch to plan "check empty" if no one is waiting.
+[cleanup]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Go to KonKat's: north 2nd right, 2nd right.
+Pickup a passenger going to Riverview Bridge.
+Go to Riverview Bridge: north 1st left.
+[do top]
+Go to Narrow Path Park: east 1st left 1st right.
+Switch to plan "stack empty" if no one is waiting.
+Pickup a passenger going to Cyclone.
+Go to Cyclone: west 1st left, 1st right, 2nd left.
+Pickup a passenger going to Narrow Path Park.
+Pickup a passenger going to The Babelfishery.
+Go to Narrow Path Park: north 2nd right, 1st left, 1st right.
+Go to The Babelfishery: east 1st right.
+Pickup a passenger going to the Post Office.
+"\n" is waiting at the Writer's Depot.
+Go to the Writer's Depot: north 1st left, 1st left, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Switch to plan "input".
+[check empty]
+"empty" is waiting at the Writer's Depot.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to the Cyclone.
+Go to Zoom Zoom: north.
+Go to the Cyclone: west.
+Pickup a passenger going to Little League Field.
+Go to the Writer's Depot: south.
+Pickup a passenger going to the Crime Lab.
+Go to Little League Field: north 1st right, 2nd right, 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: east 1st right, 1st right, 2nd right.
+Switch to plan "push" if no one is waiting.
+[cleanup]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Pickup another passenger going to KonKat's.
+Go to KonKat's: north 2nd right, 2nd right.
+Pickup a passenger going to Riverview Bridge.
+Go to Riverview Bridge: north 1st left.
+Go to Narrow Path Park: east 1st left, 1st right.
+Switch to plan "stack empty" if no one is waiting.
+[e loop]
+Pickup a passenger going to The Babelfishery.
+Switch to plan "e lastone" if no one is waiting.
+Pickup a passenger going to The Babelfishery.
+[e lastone]
+Go to The Babelfishery: east 1st right.
+Pickup a passenger going to KonKat's.
+Switch to plan "e lastone2" if no one is waiting.
+Pickup a passenger going to KonKat's.
+[e lastone2]
+Go to KonKat's: north.
+Go to Narrow Path Park: north 2nd left.
+Switch to plan "e done" if no one is waiting.
+Go to KonKat's: east 1st right.
+Pickup a passenger going to KonKat's.
+Go to Narrow Path Park: north 2nd left.
+Switch to plan "e loop".
+[e done]
+Go to KonKat's: east 1st right.
+Pickup a passenger going to Riverview Bridge.
+Go to Riverview Bridge: north 1st left.
+Go to the Post Office: east 1st right, 3rd right, 1st left.
+Switch to plan "input".
+[push]
+Go to the Cyclone: south 1st right, 1st left, 2nd right.
+Pickup a passenger going to The Babelfishery.
+Go to The Babelfishery: south 1st left, 2nd right, 1st right.
+Pickup a passenger going to Narrow Path Park.
+Go to Narrow Path Park: north 6th left.
+Go to the Post Office: east 1st right, 4th right, 1st left.
+Switch to plan "input".
+[stack underflow]
+"Error: Stack Underflow" is waiting at the Writer's Depot.
+Go to the Writer's Depot: west 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Go to the Taxi Garage: north 1st right, 1st left, 1st right.
+[stack empty]
+"Stack is Empty\n" is waiting at the Writer's Depot.
+Go to the Writer's Depot: west 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Switch to plan "input".

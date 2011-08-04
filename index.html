@@ -1,75 +1,405 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>BigZaphod/Taxi @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #733fd5;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #8cc02a; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #8cc02a; }
-    h3 { text-align: center; color: #8cc02a; }
-    a { color: #8cc02a; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+<title>Taxi: The Programming Language</title>
 </head>
+<body bgcolor="white" alink="red" vlink="blue" link="blue">
+<small><font face="Arial"><b>Other Languages:</b>
+<a href="/cow/">COW</a> | <a href="/whirl/">Whirl</a> | <a href="/3code/">3code</a> | <b>Taxi</b> </font></small>
 
-<body>
-  <a href="http://github.com/BigZaphod/Taxi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div>
+<img src="logo.png" alt="Taxi" />
+</div>
 
-  <div id="container">
+<div style="border: 1px solid green; padding: 5px;">
+<b>Important news!</b><div style="margin: 0px; padding: 6px;">
+<small>[06/28/05]</small> Version 1.2: Removed the first space in "Fuel 'er Up".  The space+quote caused a problem with the parser.<br>
+<small>[06/30/05]</small> Version 1.3: Renamed "Fuel'er Up" to "Fueler Up", fixed some bugs, and raised the fare to 0.07 credits per mile.<br>
+<small>[07/05/05]</small> Version 1.4: Tiny change to allow compile on Windows. (I hope.)<br>
+<small>[07/06/05]</small> Version 1.5: Fixed a parser bug. (Thanks Paul!)<br>
+<small>[12/21/05]</small> Version 1.6: Added newline support for strings.<br>
+<small>[12/21/05]</small> Implemented <b>99 Bottles of Beer</b>.<br>
+<small>[03/29/07]</small> Nick Turner sent an <b>awesome 4 function RPN calculator</b> and a <b>patch</b> for the interpreter (included in version 1.7)!<br>
+<small>[11/04/08]</small> Jay Campbell sent me a <b>fun logo</b> for Taxi! (see above).  Thanks Jay!<br>
+<br>
+Check out the <a href="#downloads">downloads</a>.
+</div>
+</div>
 
-    <div class="download">
-      <a href="http://github.com/BigZaphod/Taxi/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/BigZaphod/Taxi/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+<p>
+Let's be honest here, what does a programmer fundamentally do?  A programmer moves data from one memory location to another.  Over and over.
+In this respect, a programmer is not unlike a taxi driver.  A taxi driver moves people from place to place all day long.  The people get dropped off,
+do their things, and new people get loaded back up to be taken someplace else - except unlike programmers, the things taxi drivers shuffle around
+all day pay them for the service!  Well programmers no longer need to put up with that kind if ingratitude from their data: introducting the Taxi Programming Languge!
+</p><p>
+Put away your Dilbert comic clippings and hang up your cubicle pass - you're getting out of the office and about to hit the streets of Townsburg for the famous
+Townsburg Taxi Company, Inc. transportation service.  Townsburg is filled to the brim with bits of data that need to move from here to there and back again.  It will be your
+duty to assist these colorful folks with their tasks in the most efficient and timely manner possible.
+</p><p>
+You will be driving a Townsburg Taxi Company, Inc. state of the art taxi cab 9000R.  The 9000R gets a respectible 18 miles per gallon and can hold up
+to 20 gallons of fuel in a full tank.  Unlike the previous model 8002GT car, the 9000R seats up to 3 passengers at one time which maximizes the profit
+per mile ratio meaning you get more bang for your buck than ever before.
+</p><p>
+Each day your car will be waiting for you at the Taxi Garage with a full tank of gas and an empty cash box.  Each passenger pays a standard fare of
+0.07 credits per mile for the distance they have been riding in the cab.  Passengers are not expected to pay until they are dropped off, so be sure to
+collect their fare at that time.  Keeping the cab full of fuel throughout the day is your responsibility, so you better be sure to make enough money
+that you can stop at a gas station now and then to fill up the tank.  If you run out of gas there is no one to come to your rescue and you might as 
+well forget about coming to work the next day.  In any case, if you keep it moving, make some money, and bring the cab back to the garage at the end
+of the day, you'll do fine as an employee of Townsburg Taxi Company, Inc.
+</p>
 
-    <h1><a href="http://github.com/BigZaphod/Taxi">Taxi</a>
-      <span class="small">by <a href="http://github.com/BigZaphod">BigZaphod</a></span></h1>
+<h3>Mechanics</h3>
+<p>
+The Taxi programming language consists of instructions to you, the taxi driver.  These instructions consist of directions to places to pickup or drop off
+passengers, where passengers are waiting to be picked up, and what to do if no one comes to the curb.  Your car starts out with a full 20 gallon tank of gas
+and an empty cash box.  The car gets 18 miles per gallon which means you cannot just drive around aimlessly all day or you'll eventually run out of gas and with an empty
+cash box, you won't be able to afford any more fuel.  The solution to this is to pickup and drop off passengers as you move around town.  They will pay you
+for your miles once they get where they were going and then you can pay for gas from a gas station to keep the process rolling.
+The fare paid by the passengers is a flat 0.07 credits per mile.  Since Townsburg employs a state of the art electronic money system and your cab comes loaded
+with a super-accurate digital odometer, fractional credits are common and the passenger pays for exactly the distance they traveled.
+</p><p>Operations take place at destinations throughout Townsburg.  Drop two or three passengers off at Addition Alley, and their numerical values are added together
+with the resulting value becoming a passenger waiting at the curb for pickup.  Passenger drop off and payment happens automatically.  When you are carrying one or more
+passengers who are going to the place you just stopped at, they will get out in the order they got into the taxi.  In other words, the passenger who has been
+in your car and destined for that location the longest will get out first, followed by the next longest, and so on.  Most destinations will result in new
+passengers to pick up, however they will not automatically board the taxi.  You must explicitly pick them up which also allows for the passenger to declare
+their destination.  Most places will allow any number of passengers to queue up on the curb which means you do not necessarily have to pickup the results
+right away - you could go and do something else and then come back for them later if needed.
+</p><p>
+When stopping at a gas station, the maximum amount of gas will automatically be bought and paid for from your store of credits in the cash box.  If you have
+enough cash, the entire tank will be filled up.  You are only charged for the exact amount of fuel you purchase.  Passengers cannot be dropped off at gas
+stations nor can any be picked up from them.
+</p>
 
-    <div class="description">
-      The Taxi Programming Language
-    </div>
+<h3>Road Map</h3>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td nowrap><a href="map-big.png"><img src="map-small.png" border="0" alt="road map image"></a></td>
+<tr><td align="right"><small><b>(click map for larger image)&nbsp;</b></small></td></tr>
+</table>
 
-    <h2>Contact</h2>
-<p>Sean Heber (sean@fifthace.com)<br/>      </p>
+<h3>Destinations</h3>
+<table border="0" cellpadding="0" cellspacing="1">
+<tr><td bgcolor="#dadada">
+  <table border="0" cellpadding="3" cellspacing="1">
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Addition Alley</b></td>
+    <td bgcolor="white">adds numerical passengers together, anything non-numeric is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Auctioneer School</b></td>
+    <td bgcolor="white">converts string passengers to uppercase, non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Bird's Bench</b></td>
+    <td bgcolor="white">one passenger can wait here until later, but only 1
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Charboil Grill</b></td>
+    <td bgcolor="white">convert a numerical passenger to a single ASCII character (string) or vice-versa, strings longer than 1 are an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Chop Suey</b></td>
+    <td bgcolor="white">takes a string passenger and breaks it up into individual string passengers that hold one character each, so &quot;Hi&quot; results in 2 passengers: &quot;H&quot; and &quot;i&quot;, non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Collator Express</b></td>
+    <td bgcolor="white">tests if the first string passenger is less than the second and returns the first if true or no one if not true, non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Crime Lab</b></td>
+    <td bgcolor="white">tests if all dropped off string passengers are equal to each other, if so returns 1 passenger with the value, otherwise no passenger is returned, non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Cyclone</b></td>
+    <td bgcolor="white">makes clones of passengers, drop 1 off, get original plus 1 copy back, drop 3 off, get original 3, plus 3 copies back, etc.
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Divide and Conquer</b></td>
+    <td bgcolor="white">divides numerical passengers, anything non-numeric is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Equal's Corner</b></td>
+    <td bgcolor="white">tests if all dropped off numerical passengers are equal to each other, if so returns 1 passenger with the value, otherwise no passenger is returned, non-numeric is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Firemouth Grill</b></td>
+    <td bgcolor="white">any number of passengers can be dropped off here, but picked up in random and unknown order
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Fueler Up</b></td>
+    <td bgcolor="white">gas station: 1.92/gallon
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Go More</b></td>
+    <td bgcolor="white">gas station: 1.75/gallon
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Heisenberg's</b></td>
+    <td bgcolor="white">pickup an unspecified random integer
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Joyless Park</b></td>
+    <td bgcolor="white">passengers dropped off here form a FIFO queue so they can be picked up again later
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Knots Landing</b></td>
+    <td bgcolor="white">inverts boolean logic via numerical passengers: non-zero becomes 0, 0 becomes 1, non-numerical is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>KonKat's</b></td>
+    <td bgcolor="white">concatenates string passengers, anything non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Little League Field</b></td>
+    <td bgcolor="white">converts string passengers to lowercase, non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Magic Eight</b></td>
+    <td bgcolor="white">tests if the first passenger is less than the second and returns the first if true or no one if not true, non-numerical is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Multiplication Station</b></td>
+    <td bgcolor="white">multiplies numerical passengers, anything non-numeric is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Narrow Path Park</b></td>
+    <td bgcolor="white">passengers dropped off here form a stack (LIFO) so they can be picked up again later
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Post Office</b></td>
+    <td bgcolor="white">drop off string passengers to print to stdout, pickup a passenger to read a string line from stdin
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Riverview Bridge</b></td>
+    <td bgcolor="white">passengers dropped off at Riverview Bridge seem to always fall over the side and into the river thus the driver collects no pay, but at least the pesky passenger is gone
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Rob's Rest</b></td>
+    <td bgcolor="white">one passenger can wait here until later, but only 1
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Rounders Pub</b></td>
+    <td bgcolor="white">rounds numerical passengers, non-numerical is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Starchild Numerology</b></td>
+    <td bgcolor="white">pickup a specified numerical value
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Sunny Skies Park</b></td>
+    <td bgcolor="white">passengers dropped off here form a FIFO queue so they can be picked up again later
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Taxi Garage</b></td>
+    <td bgcolor="white">starting and termination point
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>The Babelfishery</b></td>
+    <td bgcolor="white">translates a numerical passenger to a string passenger or vice-versa
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>The Underground</b></td>
+    <td bgcolor="white">takes 1 numerical passenger and subtracts 1, if the result is 0 or less than 0, no passenger is returned otherwise the result is returned, non-numerical is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Tom's Trims</b></td>
+    <td bgcolor="white">removes whitespace from beginning and ending of string passengers, non-string is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Trunkers</b></td>
+    <td bgcolor="white">truncates numerical passengers to an integer, non-numerical is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>What's The Difference</b></td>
+    <td bgcolor="white">subtracts numerical passengers, anything non-numeric is an error
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Writer's Depot</b></td>
+    <td bgcolor="white">pickup a specified string
+</td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="white" width="205" align="center" nowrap><b>Zoom Zoom</b></td>
+    <td bgcolor="white">gas station: 1.45/gallon
+</td>
+  </tr>
+  </table>
+</td></tr>
+</table>
 
+<h3>Syntax</h3>
+<p>
+The best way to learn Taxi is by example, however you should be aware of a couple issues with the syntax.  Below are a few sample lines:
+<blockquote><code>
+<span style="color:red">42</span> is waiting at <span style="color:green">Starchild Numerology</span>.<br>
+<span style="color:red">43</span> is waiting at <span style="color:green">Starchild Numerology</span>.<br>
+<span style="color:red">"Hello"</span> is waiting at <span style="color:orange">the</span> <span style="color:green">Writer's Depot</span>.<br>
+Go to <span style="color:green">Starchild Numerology</span>: west 1st left, 2nd right, 1st left, 1st left, 2nd left.<br>
+Pickup a passenger going to <span style="color:green">The Underground</span>.<br>
+Pickup a<span style="color:orange">nother</span> passenger going to <span style="color:green">The Underground</span>.<br>
+Go to <span style="color:green">Writer's Depot</span>: west 1st right, 1st left, 1st right.<br>
+Pickup a passenger going to <span style="color:orange">the</span> <span style="color:green">Post Office</span>.
+</code></blockquote>
+The text highlighted in <span style="color:red">red</span> are data values and can be any value you wish to have waiting at the specified location.
+Note, however, that the only two locations where you are allowed to declare what passengers are waiting are Starchild Numerology and Writer's Depot.
+Also note that those locations are data-type-sensitive.  If you try to declare passenger "Hi" is waiting at Starchild Numerology, you will most likely
+end up with a 0 waiting for you there instead of the string you might have thought would be there.
+<br><br>
+Text marked with <span style="color:orange">orange</span> is optional.  In certain positions, the word "the" is allowed because it may make for a
+more naturally readable sentence.  Also "another" is allowed when picking up passengers in place of the "a" for similar reasons.
+<br><br>
+All names marked with <span style="color:green">green</span> are destinations on the Townsburg map.  As with all text in Taxi, they are
+case sensitive and must match <b>exactly</b> with the names on the map and destination list.  Note that some names include the word "The" in them
+(such as The Babelfishery) and so they must always be specified with "The" capitalized.
+<br><br>
+Traveling Townsburg is how you get your computing done.  This is accomplished by given directions to your next destination that are relative
+to your current location.  First you designate the initial starting direction of travel on the street you are currently on.  This is done using
+normal cardinal directions (north/south/east/west).  What follows is the list of turns that must be made at each intersection encountered on the
+way to the destination.  Each intersection on the map is marked with a black dot (the red dots are destination locations).  Once you are on the
+street which has the destination, and you are traveling in the correct direction, the car should arrive where it is going including traveling
+straight through any intersections that might be between your present position and the final stop.  Hopefully this becomes more clear as you
+trace through some of the below examples.
+<br><br>
+<b>Branching</b> is done using labels and another command format as seen in the sample lines below:
+<blockquote><code>
+[<span style="color:red">loop</span>]<br>
+.. many code lines ..<br>
+Switch to plan "<span style="color:red">end_loop</span>" if no one is waiting.<br>
+Pickup a passenger going to <span style="color:green">The Underground</span>.<br>
+Switch to plan "<span style="color:red">loop</span>".<br>
+[<span style="color:red">end_loop</span>]<br>
+.. continue on with more code ..
+</code></blockquote>
+The <span style="color:red">red</span> text is any label that you choose.  Labels can be anywhere within the program script and have almost any name.
+Note that <b>Switch to plan "end_loop" if no one is waiting.</b> is a conditional jump and the only way to do such things within Taxi.
+Leaving off the "if no one is waiting" part makes it an unconditional jump.
+<br><br>
+Nearly all commands in Taxi are case sensitive, so best just model your code after the code samples seen here to be safe.  All sentences must end in a period.
+Comments are easily supported by defining labels with the comments in them as labels are technically not code and so will not interfere with the rest of the
+script.  Note however that you cannot insert comments or labels in the middle of a command sentence.
+</p>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/BigZaphod/Taxi/zipball/master">zip</a> or
-      <a href="http://github.com/BigZaphod/Taxi/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/BigZaphod/Taxi</pre>
-    </p>
+<h3>Examples</h3>
+Here is the classic "Hello, World!" program.  For a program to be successful, you must end the run with your cab at the Taxi Garage.
+This program is short enough that we need not concern ourselves with visiting a gas station, but in longer programs it becomes critical to track fuel
+usage so that your car doesn't run out of gas.
+<blockquote><code>
+&quot;Hello, World!&quot; is waiting at the Writer's Depot.
+<br>Go to Writer's Depot: west 1st left, 2nd right, 1st left, 2nd left.
+<br>Pickup a passenger going to the Post Office.
+<br>Go to the Post Office: north 1st right, 2nd right, 1st left.
+<br>Go to the Taxi Garage: north 1st right, 1st left, 1st right.
+<br></code></blockquote>
+The following will calculate the first 30 numbers of the Fibonacci sequence and represents a more complex Taxi program.
+This program forces us to visit a gas station during the loop because otherwise we'd never have enough fuel to print all 30 numbers.
+It also uses both a conditional and unconditional jump as well as comments.
+<blockquote><code>
+[ This is the first 30 Fibonacci numbers implemented in the Taxi programming language ]
+<br>[ Author: BigZaphod (sean -at- fifthace.com) ]
+<br>[ License: Public Domain ]
+<br>[ http://www.bigzaphod.org/taxi/ ]
+<br>
+<br>1 is waiting at Starchild Numerology.
+<br>1 is waiting at Starchild Numerology.
+<br>30 is waiting at Starchild Numerology.
+<br>Go to Starchild Numerology: west 1st left, 2nd right, 1st left, 1st left, 2nd left.
+<br>Pickup a passenger going to Cyclone.
+<br>Pickup a passenger going to Rob's Rest.
+<br>Pickup a passenger going to Sunny Skies Park.
+<br>Go to Sunny Skies Park: west 1st right.
+<br>Go to Rob's Rest: south 2nd right, 1st right.
+<br>[B]
+<br>Go to Cyclone: south 1st left, 1st left, 1st left, 1st right.
+<br>Pickup a passenger going to The Babelfishery.
+<br>Pickup a passenger going to Addition Alley.
+<br>Go to The Babelfishery: south 1st left, 2nd right, 1st right.
+<br>Pickup a passenger going to the Post Office.
+<br>&quot; &quot; is waiting at Writer's Depot.
+<br>Go to Writer's Depot: north 1st left, 1st left, 2nd left.
+<br>Pickup a passenger going to the Post Office.
+<br>Go to Post Office: north, 1st right, 2nd right, 1st left.
+<br>Go to Rob's Rest: south 1st right, 1st left, 1st left, 1st right, 1st right.
+<br>Pickup a passenger going to Cyclone.
+<br>Go to Cyclone: south 1st left, 1st left, 1st left, 1st right.
+<br>Pickup a passenger going to Addition Alley.
+<br>Pickup a passenger going to Cyclone.
+<br>Go to Zoom Zoom: north.
+<br>Go to Addition Alley: west 1st left, 1st right.
+<br>Pickup a passenger going to Rob's Rest.
+<br>Go to Sunny Skies Park: north 1st left, 1st left, 1st left.
+<br>Pickup a passenger going to The Underground.
+<br>Go to The Underground: south 1st left, 1st right, 2nd left.
+<br>Switch to plan &quot;C&quot; if no one is waiting.
+<br>Pickup a passenger going to Sunny Skies Park.
+<br>Go to Sunny Skies Park: south 2nd right, 1st left, 1st right.
+<br>Go to Rob's Rest: south 2nd right, 1st right.
+<br>Switch to plan &quot;B&quot;.
+<br>[C]
+<br>Go to the Taxi Garage: south 2nd left.
+<br></code></blockquote>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/BigZaphod/Taxi">BigZaphod/Taxi</a>
-    </div>
+<a name="downloads">
+<h3>Downloads</h3>
+The <a href="taxi.cpp">version 1.7 C++ source</a> for the interpreter is available. <small>(it is very scary)</small>
+<br><br>
+<a href="hello_world.txt">Hello, World</a> and <a href="fib.txt">Fibonacci</a> sample code.
+<br><br>
+<a href="echo.txt">Echo</a> will read a string from stdin, and then echo it back to stdout.
+<br><br>
+I implemented the classic <a href="99.txt">99 Bottles of Beer</a> program.  It doesn't handle the plural/singular "bottles" or the end case very well, but 
+it works!  Improvements are welcome.
+<br><br>
+Nick Turner's <a href="calc.nick_turner.txt">4 function RPN calculator</a> is an impressive piece of work.  Here's what he has to say about it: <i>It 
+should be pretty self explanatory, and
+it provides help and error messages as it goes along. Entering numbers
+pushes them to the stack; +, -, *, and / all pop two values and push
+their result; "top" shows the top value (without destroying it) and
+"empty" clears the stack; "bye" will show the top value if it isn't
+empty, then quits. Everything except "bye" cleans up the town after
+itself (no passengers left waiting anywhere except the stack) and the
+program manages to make a substantial profit.</i>  Thanks Nick!
 
-  </div>
+<h3>History</h3>
+Conceived on June 21, 2005 and first released on June 27th, 2005.
 
-  
+<br><br><br>
+<div align="center">
+<table border="1" cellpadding="4" cellspacing="0" width="255" align="center"><tr><td style="background:#fed;color:#000;font-family:Tahoma,Helvetica,Arial, sans-serif;text-align:center;font-size:11px"><strong><a style="color:#420;text-decoration:none" href="http://B.webring.com/wrman?ring=esolang&amp;addsite" target="_top">The Esoteric Programming Languages Ring</a></strong><br /><a style="color:#840" href="http://B.webring.com/go?ring=esolang&amp;id=52&amp;prev" target="_top">&lt;&lt; Prev</a>&nbsp;<a style="color:#840" href="http://B.webring.com/hub?ring=esolang&amp;id=52&amp;hub" target="_top">Ring Hub</a>&nbsp;<a style="color:#840" href="http://B.webring.com/go?ring=esolang&amp;id=52&amp;next" target="_top">Next &gt;&gt;</a></td></tr></table>
+</div>
+
+<br>
+<small><a href="http://www.bigzaphod.org">check out my other stuff</a></small>
+
 </body>
 </html>
+
