@@ -131,7 +131,7 @@ public:
 typedef list<passenger_t> passenger_list;
 
 
-class taxi 
+class taxi
 {
 public:
 	passenger_list passengers;
@@ -469,7 +469,10 @@ void taxi::passenger_pays( passenger_t& p )
 
 void taxi_garage( location& here, incoming_list& incoming )
 {
-	cout << endl << "The taxi is back in the garage.  Program complete." << endl;
+	#ifndef NO_GREETINGS
+		cout << endl << "The taxi is back in the garage.  Program complete." << endl;
+	#endif
+
 	exit( 0 );
 }
 
@@ -766,7 +769,7 @@ void chop_suey( location& here, incoming_list& incoming )
 {
 	while( !incoming.empty() ) {
 		taxi_value v = incoming.next();
-		if( !v.is_string() ) 
+		if( !v.is_string() )
 			error( "requires a string value" );
 		for( size_t i=0; i<v.str().length(); i++ )
 			here.add_outgoing_passenger( taxi_value( string(1,v.str()[i]) ) );
@@ -1086,7 +1089,7 @@ public:
 			error( "parse error: likely incomplete statement" );
 	}
 
-	void compile( vector<string>& in ) { 
+	void compile( vector<string>& in ) {
 		code_t c;
 		// is waiting at...
 		if( in.size()>=5 && in[1]=="is" && in[2]=="waiting" && in[3]=="at" ) {
@@ -1264,8 +1267,11 @@ int main( int argc, char** argv )
 		exit( -1 );
 	}
 
-	cout << "Welcome to Taxi!" << endl;
-	cout << "Let the journey begin..." << endl << endl;
+	#ifndef NO_GREETINGS
+		cout << "Welcome to Taxi!" << endl;
+		cout << "Let the journey begin..." << endl << endl;
+	#endif
+
 	srandom( time(NULL) );
 
 //-------------------------------------------------------------------------------------------
