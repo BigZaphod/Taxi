@@ -490,7 +490,10 @@ void taxi::passenger_pays( passenger_t& p )
 
 void taxi_garage( location& here, incoming_list& incoming )
 {
-	cout << endl << "The taxi is back in the garage.  Program complete." << endl;
+	#ifndef NO_GREETINGS
+		cout << endl << "The taxi is back in the garage.  Program complete." << endl;
+	#endif
+
 	exit( 0 );
 }
 
@@ -1292,8 +1295,11 @@ int main( int argc, char** argv )
 		exit( -1 );
 	}
 
-	cout << "Welcome to Taxi!" << endl;
-	cout << "Let the journey begin..." << endl << endl;
+	#ifndef NO_GREETINGS
+		cout << "Welcome to Taxi!" << endl;
+		cout << "Let the journey begin..." << endl << endl;
+	#endif
+
 	srandom( time(NULL) );
 
 //-------------------------------------------------------------------------------------------
