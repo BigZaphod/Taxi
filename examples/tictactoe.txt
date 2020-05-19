@@ -1,0 +1,796 @@
+[ Author: Bram Pulles      ]
+[ Note: Every function starts and ends at the Fueler Up. ]
+
+Go to the Fueler Up: west 1st right.
+Switch to plan "init_onturn".
+[back_init_onturn]
+Switch to plan "init_board".
+[back_init_board]
+Switch to plan "move".
+
+[move]
+Switch to plan "print_board".
+[back_print_board]
+Switch to plan "generate_money_3".
+[back_generate_money_3]
+Switch to plan "check_win".
+[back_check_win]
+Switch to plan "check_full".
+[back_check_full]
+Switch to plan "change_onturn".
+[back_change_onturn]
+[back_invalid_move]
+Switch to plan "generate_money_1".
+[back_generate_money_1]
+Switch to plan "print_ask_move".
+[back_print_ask_move]
+Switch to plan "parse_move".
+[back_parse_move]
+Switch to plan "make_move".
+[back_make_move]
+Switch to plan "move".
+
+[ check_win: Check if someone has won, stop if so. ]
+[check_win]
+[ Put the onturn passenger (at Narrow Path Park) at the Bird's Bench. ]
+Go to the Narrow Path Park: north 4th left.
+Pickup a passenger going to the Bird's Bench.
+Go to the Bird's Bench: west 1st left, 1st right, 2nd left, 2nd left, 1st right, 1st right, 1st left.
+
+[ Put the horizontal lines in the Narrow Path Park, i.e. 123|456|789. ]
+Go to the Joyless Park: north 1st right, 1st left, 1st right, 1st right, 2nd left, 4th right.
+[check_win_hor_loop_1]
+Switch to plan "check_win_hor_endloop_1" if no one is waiting.
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+Switch to plan "check_win_hor_loop_1".
+[check_win_hor_endloop_1]
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+[check_win_hor_loop_2]
+Switch to plan "check_win_hor_endloop_2" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "check_win_hor_loop_2".
+[check_win_hor_endloop_2]
+Go to the Fueler Up: south 1st left, 1st right, 2nd left.
+
+[ Put the vertical lines in the Narrow Path Park, i.e. 147|258|369. ]
+Go to the Joyless Park: north 2nd right.
+
+[ Put 147 in the Narrow Path Park. ]
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+
+[check_win_ver_loop_1]
+Switch to plan "check_win_ver_endloop_1" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "check_win_ver_loop_1".
+[check_win_ver_endloop_1]
+
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Fueler Up: west 1st left.
+
+Go to the Joyless Park: north 2nd right.
+
+[ Put 258 in the Narrow Path Park. ]
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+
+[check_win_ver_loop_2]
+Switch to plan "check_win_ver_endloop_2" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "check_win_ver_loop_2".
+[check_win_ver_endloop_2]
+
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Fueler Up: west 1st left.
+
+Go to the Joyless Park: north 2nd right.
+
+[ Put 369 in the Narrow Path Park. ]
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+
+Go to the Sunny Skies Park: west 1st left, 1st right, 2nd left, 1st left.
+[check_win_ver_loop_3]
+Switch to plan "check_win_ver_endloop_3" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "check_win_ver_loop_3".
+[check_win_ver_endloop_3]
+
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Fueler Up: west 1st left.
+
+[ Put the diagonal lines in the Narrow Path Park, i.e. 159|357. ]
+Go to the Joyless Park: north 2nd right.
+
+[ Put 159 in the Narrow Path Park. ]
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+
+Go to the Sunny Skies Park: west 1st left, 1st right, 2nd left, 1st left.
+[check_win_dia_loop_1]
+Switch to plan "check_win_dia_endloop_1" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "check_win_dia_loop_1".
+[check_win_dia_endloop_1]
+
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Fueler Up: west 1st left.
+
+Go to the Joyless Park: north 2nd right.
+
+[ Put 357 in the Narrow Path Park. ]
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Narrow Path Park: north 1st right, 1st right, 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+Pickup a passenger going to the Sunny Skies Park.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+
+[check_win_dia_loop_2]
+Switch to plan "check_win_dia_endloop_2" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "check_win_dia_loop_2".
+[check_win_dia_endloop_2]
+
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Fueler Up: west 1st left.
+
+[ Check if one of the triplets in the Narrow Path Park contains just X's or O's, if so someone won. ]
+Go to the Narrow Path Park: north 4th left.
+[check_win_triplet_loop_1]
+Switch to plan "check_win_triplet_endloop_1" if no one is waiting.
+Pickup a passenger going to the Crime Lab.
+Pickup a passenger going to the Crime Lab.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: east 1st right.
+Switch to plan "check_win_triplet_loop_next" if no one is waiting.
+
+[ The triplet is all the same, check if they are not all dots. ]
+Pickup a passenger going to the Crime Lab.
+"." is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: north 1st right, 2nd right, 2nd left.
+Switch to plan "win" if no one is waiting.
+Pickup a passenger going to the Riverview Bridge.
+Go to the Riverview Bridge: north 4th left.
+Go to the Narrow Path Park: east 1st left, 1st right.
+Switch to plan "check_win_triplet_loop_1".
+
+[check_win_triplet_loop_next]
+Go to the Narrow Path Park: north 5th left.
+Switch to plan "check_win_triplet_loop_1".
+[check_win_triplet_endloop_1]
+
+[ Restore the onturn passenger from the Bird's Bench to the Narrow Path Park. ]
+Go to the Bird's Bench: west 1st left, 1st right, 2nd left, 3rd left, 1st left, 1st left, 1st left.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Narrow Path Park: north 1st right, 1st left, 1st left, 1st right, 2nd right, 1st left, 1st right.
+Go to the Fueler Up: east 1st right.
+Switch to plan "back_check_win".
+
+[ win: Someone won! ]
+[win]
+"Player " is waiting at the Writer's Depot.
+Go to the Writer's Depot: west 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Bird's Bench: north 1st right, 1st right, 1st right, 1st left.
+Pickup a passenger going to the Post Office.
+" won!\n" is waiting at the Writer's Depot.
+Go to the Writer's Depot: north 1st right, 1st right, 1st right, 1st right.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Go to the Taxi Garage: north 1st right, 1st left, 1st right.
+
+[ check_full: Check if the board is full thus giving us a tie, stop if so. ]
+[check_full]
+Go to the Joyless Park: north 2nd right.
+[check_full_loop]
+Switch to plan "check_full_endloop" if no one is waiting.
+Pickup a passenger going to the Cyclone.
+"." is waiting at the Writer's Depot.
+Go to the Writer's Depot: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Cyclone: north.
+Pickup a passenger going to Sunny Skies Park.
+Pickup a passenger going to the Crime Lab.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Crime Lab: east 1st left, 1st right, 2nd left.
+Switch to plan "check_full_skip" if no one is waiting.
+Switch to plan "finish_check_full".
+[check_full_skip]
+Go to the Joyless Park: north 4th right.
+Switch to plan "check_full_loop".
+[check_full_endloop]
+"It's a tie!\n" is waiting at the Writer's Depot.
+Go to the Writer's Depot: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Go to the Taxi Garage: north 1st right, 1st left, 1st right.
+
+[ finish_check_full: The board is not full, reset and go back. ]
+[finish_check_full]
+Pickup a passenger going to the Riverview Bridge.
+Go to the Riverview Bridge: north 4th left.
+[ Drive the rest of the Joyless Park to the Sunny Skies Park.      ]
+Go to the Joyless Park: east 1st right, 2nd left.
+[finish_check_full_loop_1]
+Switch to plan "finish_check_full_endloop_1" if no one is waiting.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Switch to plan "finish_check_full_loop_1".
+[finish_check_full_endloop_1]
+
+[ Drive everyone from the Sunny Skies Park to the Joyless Park.    ]
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+[finish_check_full_loop_2]
+Switch to plan "finish_check_full_endloop_2" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "finish_check_full_loop_2".
+[finish_check_full_endloop_2]
+Go to the Fueler Up: north 1st right, 1st right, 2nd right.
+Switch to plan "back_check_full".
+
+[ change_onturn: Change the turn passenger which is saved in the Narrow Path Park. ]
+[change_onturn]
+Go to the Narrow Path Park: north 4th left.
+Pickup a passenger going to the Crime Lab.
+"X" is waiting at the Writer's Depot.
+Go to the Writer's Depot: west 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: north 1st right, 2nd right, 2nd left.
+Switch to plan "change_onturn_to_X" if no one is waiting.
+[ change_onturn_to_O ]
+Pickup a passenger going to the Riverview Bridge.
+"O" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Riverview Bridge: north 3rd right.
+Go to the Narrow Path Park: east 1st left, 1st right.
+Go to the Fueler Up: east 1st right.
+Switch to plan "back_change_onturn".
+[change_onturn_to_X]
+"X" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Narrow Path Park: north 3rd right, 1st left, 1st right.
+Go to the Fueler Up: east 1st right.
+Switch to plan "back_change_onturn".
+
+[ make_move: Update the board state in the Joyless Park. ]
+[ make_move: The move is in the taxi (range 1-9) going to The Underground. ]
+[make_move]
+[make_move_loop]
+Go to The Underground: north.
+Switch to plan "make_move_cell" if no one is waiting.
+Pickup a passenger going to The Underground.
+Go to the Joyless Park: north 1st right.
+Pickup a passenger going to the Sunny Skies Park.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Fueler Up: north 1st right, 1st right, 2nd right.
+Switch to plan "make_move_loop".
+
+[ make_move_cell: The top passenger of the Joyless Park is the cell which needs to be changed. ]
+[make_move_cell]
+[ If the cell is not empty then reset and ask for another move.    ]
+Go to the Joyless Park: north 1st right.
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to the Crime Lab.
+"." is waiting at the Writer's Depot.
+Go to the Writer's Depot: south.
+Pickup a passenger going to the Crime Lab.
+Go to the Crime Lab: north 1st right, 2nd right, 2nd left.
+Switch to plan "make_move_cell_taken" if no one is waiting.
+Pickup a passenger going to the Riverview Bridge.
+Go to the Riverview Bridge: north 4th left.
+
+[ Change the value of the cell and put it in the Sunny Skies Park. ]
+Go to the Narrow Path Park: east 1st left, 1st right.
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Riverview Bridge.
+Pickup a passenger going to Sunny Skies Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Sunny Skies Park: north 1st right.
+Go to the Riverview Bridge: north 1st right, 1st right.
+Go to the Narrow Path Park: east 1st left, 1st right.
+Go to the Joyless Park: east 1st right, 3rd left.
+
+[ Drive the rest of the Joyless Park to the Sunny Skies Park.      ]
+[make_move_cell_loop_1]
+Switch to plan "make_move_cell_endloop_1" if no one is waiting.
+Pickup a passenger going to Sunny Skies Park.
+Go to Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Switch to plan "make_move_cell_loop_1".
+[make_move_cell_endloop_1]
+Go to Fueler Up: west 1st left.
+
+[ Drive everyone from the Sunny Skies Park to the Joyless Park.    ]
+Go to the Sunny Skies Park: north 3rd left, 2nd left, 1st left.
+[make_move_cell_loop_2]
+Switch to plan "make_move_cell_endloop_2" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "make_move_cell_loop_2".
+[make_move_cell_endloop_2]
+Go to Zoom Zoom: north 1st right.
+Go to Fueler Up: west 1st left, 2nd right.
+Switch to plan "back_make_move".
+
+[ make_move_cell_taken: The cell is not empty so the move is invalid. ]
+[ clone at cyclone and currently at the crime lab ]
+[make_move_cell_taken]
+"Please choose an empty cell." is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Cyclone: north.
+Pickup a passenger going to Sunny Skies Park.
+Go to Sunny Skies Park: north 1st right.
+Go to the Post Office: south 1st left, 1st right, 1st left.
+Go to the Fueler Up: north 1st right, 1st left.
+Go to the Joyless Park: north 2nd right.
+
+[ Drive the rest of the Joyless Park to the Sunny Skies Park.      ]
+[make_move_cell_taken_loop_1]
+Switch to plan "make_move_cell_taken_endloop_1" if no one is waiting.
+Pickup a passenger going to Sunny Skies Park.
+Go to Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Switch to plan "make_move_cell_taken_loop_1".
+[make_move_cell_taken_endloop_1]
+Go to Fueler Up: west 1st left.
+
+[ Drive everyone from the Sunny Skies Park to the Joyless Park.    ]
+Go to the Sunny Skies Park: north 3rd left, 2nd left, 1st left.
+[make_move_cell_taken_loop_2]
+Switch to plan "make_move_cell_taken_endloop_2" if no one is waiting.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Pickup a passenger going to the Joyless Park.
+Go to the Joyless Park: north 1st right, 1st right, 2nd right, 2nd left.
+Go to the Sunny Skies Park: west 1st right, 2nd left, 2nd left, 1st left.
+Switch to plan "make_move_cell_taken_loop_2".
+[make_move_cell_taken_endloop_2]
+Go to Zoom Zoom: north 1st right.
+Go to Fueler Up: west 1st left, 2nd right.
+Switch to plan "back_invalid_move".
+
+[ parse_move: Read from stdin until a valid move is given and convert it to an integer. ]
+[parse_move]
+Go to the Post Office: south 1st right, 1st left.
+Pickup a passenger going to The Babelfishery.
+Go to The Babelfishery: south 1st left, 1st right.
+Pickup a passenger going to the Addition Alley.
+[ parse_move: If the value from magic eight is 0 then it was not an integer. ]
+[ parse_move: Check if the value is bigger than 0 by adding one and then going to The Underground. ]
+1 is waiting at Starchild Numerology.
+Go to Starchild Numerology: north 1st left, 1st left, 1st left, 2nd left.
+Pickup a passenger going to the Addition Alley.
+Go to the Addition Alley: west 1st right, 1st left, 1st right, 3rd right, 1st right.
+Pickup a passenger going to The Underground.
+Go to The Underground: north 1st right, 1st right.
+Switch to plan "invalid_move" if no one is waiting.
+[ parse_move: Check if the value is strictly lower than 10 (the range is currently 1-9). ]
+Pickup a passenger going to the Magic Eight.
+10 is waiting at Starchild Numerology.
+Go to Starchild Numerology: south 1st right, 2nd left, 1st right, 1st left, 2nd left.
+Pickup a passenger going to the Magic Eight.
+Go to the Magic Eight: west 1st right, 2nd right, 1st right.
+Switch to plan "invalid_move_pre" if no one is waiting.
+Pickup a passenger going to The Underground.
+Go to the Fueler Up: south 2nd left.
+Switch to plan "back_parse_move".
+
+[ invalid_move_pre: First go to Fueler Up / The Underground. ]
+[invalid_move_pre]
+Go to the Fueler Up: south 2nd left.
+
+[ invalid_move: Print that the move is invalid and try to make another one. ]
+[invalid_move]
+"Please choose a number between 1 and 9." is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 2nd left, 1st right, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Go to Fueler Up: north 1st right, 1st left.
+Switch to plan "back_invalid_move".
+
+[ print_ask_move: Ask the player to make a move. ]
+[print_ask_move]
+Go to the Narrow Path Park: north 4th left.
+Pickup a passenger going to the Cyclone.
+Go to the Cyclone: west 1st left, 1st right, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+"\nPlayer " is waiting at the Writer's Depot.
+Go to the Writer's Depot: south.
+Pickup a passenger going to KonKat's.
+Go to the Cyclone: north.
+Pickup a passenger going to KonKat's.
+Go to the Narrow Path Park: north 2nd right, 1st left, 1st right.
+Go to KonKat's: east 1st right.
+Pickup a passenger going to KonKat's.
+", please make a move (1-9): " is waiting at the Writer's Depot.
+Go to the Writer's Depot: north 1st left, 2nd left.
+Pickup a passenger going to KonKat's.
+Go to KonKat's: north 3rd right, 2nd right.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: south 3rd right, 1st left.
+Go to the Fueler Up: north 1st right, 1st left.
+Switch to plan "back_print_ask_move".
+
+[ init_onturn: Initialize the Narrow Path Park with an "X" representing the onturn. ]
+[init_onturn]
+"O" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south, 1st right, 2nd left, 1st right, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Narrow Path Park: north 3rd right, 1st left, 1st right.
+Go to the Fueler Up: east 1st right.
+Switch to plan "back_init_onturn".
+
+[ init_board: Initialize the Joyless Park with 9 dots representing an empty board. ]
+[init_board]
+"." is waiting at the Writer's Depot.
+"." is waiting at the Writer's Depot.
+"." is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 2nd left, 1st right, 2nd left.
+Pickup a passenger going to Cyclone.
+Pickup a passenger going to Cyclone.
+Pickup a passenger going to Cyclone.
+Go to Cyclone: north.
+Pickup a passenger going to Joyless Park.
+Pickup a passenger going to Joyless Park.
+Pickup a passenger going to Joyless Park.
+Go to the Joyless Park: south 1st left, 2nd right, 2nd left, 4th right.
+Go to the Fueler Up: west 1st left.
+Go to the Cyclone: south 1nd right, 2nd left, 1st right, 2nd right.
+Pickup a passenger going to Cyclone.
+Pickup a passenger going to Cyclone.
+Pickup a passenger going to Cyclone.
+Go to the Cyclone: north.
+Pickup a passenger going to Joyless Park.
+Pickup a passenger going to Joyless Park.
+Pickup a passenger going to Joyless Park.
+Go to the Joyless Park: south 1st left, 2nd right, 2nd left, 4th right.
+Go to the Fueler Up: west 1st left.
+Go to the Cyclone: south 1nd right, 2nd left, 1st right, 2nd right.
+Pickup a passenger going to Joyless Park.
+Pickup a passenger going to Joyless Park.
+Pickup a passenger going to Joyless Park.
+Go to the Joyless Park: south 1st left, 2nd right, 2nd left, 4th right.
+Go to the Fueler Up: west 1st left.
+Switch to plan "back_init_board".
+
+[ print_board: Print the contents of the Joyless Park. ]
+[print_board]
+"\n" is waiting at the Writer's Depot.
+Go to the Writer's Depot: north 3rd left, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to the Post Office: north 1st right, 2nd right, 1st left.
+Go to the Fueler Up: north 1st right, 1st left.
+Switch to plan "generate_money_2".
+[back_generate_money_2]
+3 is waiting at Starchild Numerology.
+9 is waiting at Starchild Numerology.
+Go to Starchild Numerology: south 1st right, 2nd left, 1st right, 1st left, 2nd left.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to Rob's Rest.
+Go to Rob's Rest: west 1st right, 2nd left, 1st right.
+Go to Fueler Up: south 1st left, 1st left, 1st right, 1st right, 2nd left.
+Go to the Joyless Park: north 2nd right.
+
+[print_board_one]
+[ print_board_one: First print the square and leave the Joyless Park intact. ]
+Pickup a passenger going to Cyclone.
+Go to Cyclone: west 1st left, 1st right, 2nd left, 1st right, 2nd right.
+Pickup a passenger going to the Post Office.
+Pickup a passenger going to the Joyless Park.
+Go to the Post Office: south 1st left, 2rd right, 1st left.
+Go to the Fueler Up: north 1st right, 1st left.
+
+[ print_board_one: Second check if we need to print a newline. ]
+Go to The Underground: north.
+Switch to plan "print_board_newline" if no one is waiting.
+Pickup a passenger going to Bird's Bench.
+Go to the Bird's Bench: south 1st right, 2nd left, 1st right, 1st left, 1st right, 1st left.
+
+[ print_board_one: Third check if 9 squares are printed and handle accordingly. ]
+[back_print_board_newline]
+Go to Rob's Rest: north.
+Pickup a passenger going to The Underground.
+Go to The Underground: south 1st left, 1st left, 1st right, 1st right, 2nd left.
+Switch to plan "print_board_finish" if no one is waiting.
+Pickup a passenger going to Rob's Rest.
+Go to Fueler Up: south.
+Go to Rob's Rest: south, 1st right, 2nd left, 1st right, 1st left, 1st right, 1st right.
+Go to the Bird's Bench: south.
+Pickup a passenger going to The Underground.
+Go to the Joyless Park: north 1st right, 1st left, 1st right, 1st right, 2nd left, 4th right.
+Switch to plan "print_board_one".
+
+[print_board_newline]
+3 is waiting at Starchild Numerology.
+"\n" is waiting at the Writer's Depot.
+Go to the Writer's Depot: south 1st right, 2nd left, 1st right, 2nd left.
+Pickup a passenger going to the Post Office.
+Go to Starchild Numerology: south 1st left, 2nd right.
+Pickup a passenger going to Bird's Bench.
+Go to the Post Office: west, 1st right, 2nd right, 1st right, 1st left.
+Go to the Bird's Bench: south 1st right, 1st left, 1st left, 1st right, 1st left.
+Switch to plan "back_print_board_newline".
+
+[print_board_finish]
+Go to Fueler Up: south.
+Go to the Bird's Bench: south 1st right, 2nd left, 1st right, 1st left, 1st right, 1st left.
+Pickup a passenger going to Riverview Bridge.
+Go to the Riverview Bridge: north 1st right, 1st left, 1st left, 1st right, 2nd right.
+Go to the Joyless Park: east 1st right, 2nd left.
+Go to the Fueler Up: west 1st left.
+Switch to plan "back_print_board".
+
+[ generate_money: Generate some money, as easy at it is. ]
+[generate_money_1]
+0 is waiting at Starchild Numerology.
+0 is waiting at Starchild Numerology.
+0 is waiting at Starchild Numerology.
+Go to Starchild Numerology: south 2nd right, 1st left, 1st left, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Narrow Path Park: east 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 2nd right, 3rd right, 1st left, 1st right.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to The Underground.
+Go to The Underground: east 1st right.
+Go to The Underground: north.
+Go to The Underground: north.
+Go to Fueler Up: south.
+Switch to plan "back_generate_money_1".
+
+[ generate_money: Generate some money, as easy at it is. ]
+[generate_money_2]
+0 is waiting at Starchild Numerology.
+0 is waiting at Starchild Numerology.
+0 is waiting at Starchild Numerology.
+Go to Starchild Numerology: south 2nd right, 1st left, 1st left, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Narrow Path Park: east 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 2nd right, 3rd right, 1st left, 1st right.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to The Underground.
+Go to The Underground: east 1st right.
+Go to The Underground: north.
+Go to The Underground: north.
+Go to Fueler Up: south.
+Switch to plan "back_generate_money_2".
+
+[ generate_money: Generate some money, as easy at it is. ]
+[generate_money_3]
+0 is waiting at Starchild Numerology.
+0 is waiting at Starchild Numerology.
+0 is waiting at Starchild Numerology.
+Go to Starchild Numerology: south 2nd right, 1st left, 1st left, 2nd left.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Narrow Path Park.
+Pickup a passenger going to the Narrow Path Park.
+Go to the Narrow Path Park: east 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 1st left, 2nd right, 3rd right, 1st left, 1st right.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to The Underground.
+Pickup a passenger going to The Underground.
+Go to The Underground: east 1st right.
+Go to The Underground: north.
+Go to The Underground: north.
+Go to Fueler Up: south.
+Switch to plan "back_generate_money_3".
