@@ -15,14 +15,15 @@
 
 <div style="border: 1px solid green; padding: 5px;">
 <b>Important news!</b><div style="margin: 0px; padding: 6px;">
-<small>[06/28/05]</small> Version 1.2: Removed the first space in "Fuel 'er Up".  The space+quote caused a problem with the parser.<br>
-<small>[06/30/05]</small> Version 1.3: Renamed "Fuel'er Up" to "Fueler Up", fixed some bugs, and raised the fare to 0.07 credits per mile.<br>
-<small>[07/05/05]</small> Version 1.4: Tiny change to allow compile on Windows. (I hope.)<br>
-<small>[07/06/05]</small> Version 1.5: Fixed a parser bug. (Thanks Paul!)<br>
-<small>[12/21/05]</small> Version 1.6: Added newline support for strings.<br>
-<small>[12/21/05]</small> Implemented <b>99 Bottles of Beer</b>.<br>
-<small>[03/29/07]</small> Nick Turner sent an <b>awesome 4 function RPN calculator</b> and a <b>patch</b> for the interpreter (included in version 1.7)!<br>
-<small>[11/04/08]</small> Jay Campbell sent me a <b>fun logo</b> for Taxi! (see above).  Thanks Jay!<br>
+<small>[06/28/2005]</small> Version 1.2: Removed the first space in "Fuel 'er Up".  The space+quote caused a problem with the parser.<br>
+<small>[06/30/2005]</small> Version 1.3: Renamed "Fuel'er Up" to "Fueler Up", fixed some bugs, and raised the fare to 0.07 credits per mile.<br>
+<small>[07/05/2005]</small> Version 1.4: Tiny change to allow compile on Windows. (I hope.)<br>
+<small>[07/06/2005]</small> Version 1.5: Fixed a parser bug. (Thanks Paul!)<br>
+<small>[12/21/2005]</small> Version 1.6: Added newline support for strings.<br>
+<small>[12/21/2005]</small> Implemented <b>99 Bottles of Beer</b>.<br>
+<small>[03/29/2007]</small> Nick Turner sent an <b>awesome 4 function RPN calculator</b> and a <b>patch</b> for the interpreter (included in version 1.7)!<br>
+<small>[11/04/2008]</small> Jay Campbell sent me a <b>fun logo</b> for Taxi! (see above).  Thanks Jay!<br>
+<small>[05/19/2020]</small> Bram Pulles implemented an <b>amazing Tic-Tac-Toe game</b> and even found a <i>15 year old bug</i>! Thanks Bram!<br>
 <br>
 Check out the <a href="#downloads">downloads</a>.
 </div>
@@ -373,16 +374,16 @@ It also uses both a conditional and unconditional jump as well as comments.
 
 <a name="downloads">
 <h3>Downloads</h3>
-The <a href="taxi.cpp">version 1.7 C++ source</a> for the interpreter is available. <small>(it is very scary)</small>
+The <a href="https://github.com/BigZaphod/Taxi/blob/master/source/taxi.cpp">C++ source</a> for the interpreter is available. <small>(it is very scary)</small>
 <br><br>
-<a href="hello_world.txt">Hello, World</a> and <a href="fib.txt">Fibonacci</a> sample code.
+<a href="https://github.com/BigZaphod/Taxi/blob/master/examples/hello_world.txt">Hello, World</a> and <a href="fib.txt">Fibonacci</a> sample code.
 <br><br>
-<a href="echo.txt">Echo</a> will read a string from stdin, and then echo it back to stdout.
+<a href="https://github.com/BigZaphod/Taxi/blob/master/examples/echo.txt">Echo</a> will read a string from stdin, and then echo it back to stdout.
 <br><br>
-I implemented the classic <a href="99.txt">99 Bottles of Beer</a> program.  It doesn't handle the plural/singular "bottles" or the end case very well, but 
+I implemented the classic <a href="https://github.com/BigZaphod/Taxi/blob/master/examples/99.txt">99 Bottles of Beer</a> program.  It doesn't handle the plural/singular "bottles" or the end case very well, but 
 it works!  Improvements are welcome.
 <br><br>
-Nick Turner's <a href="calc.nick_turner.txt">4 function RPN calculator</a> is an impressive piece of work.  Here's what he has to say about it: <i>It 
+Nick Turner's <a href="https://github.com/BigZaphod/Taxi/blob/master/examples/calc.nick_turner.txt">4 function RPN calculator</a> is an impressive piece of work.  Here's what he has to say about it: <i>It 
 should be pretty self explanatory, and
 it provides help and error messages as it goes along. Entering numbers
 pushes them to the stack; +, -, *, and / all pop two values and push
@@ -391,6 +392,10 @@ their result; "top" shows the top value (without destroying it) and
 empty, then quits. Everything except "bye" cleans up the town after
 itself (no passengers left waiting anywhere except the stack) and the
 program manages to make a substantial profit.</i>  Thanks Nick!
+<br><br>
+Bram Pulles <a href="https://github.com/BigZaphod/Taxi/blob/master/examples/tictactoe.txt">wrote an astounding Tic-Tac-Toe implementation</a>!
+Two players can take turns and the game will detect the winner. It even prevents the player from making impossible moves! Bran also discovered 
+and patched a bug in the interpreter that's been lurking for nearly 15(!) years. Thanks a lot, Bram!
 
 <h3>History</h3>
 Conceived on June 21, 2005 and first released on June 27th, 2005.
