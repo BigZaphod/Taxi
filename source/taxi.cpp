@@ -74,13 +74,12 @@ typedef enum { D_LEFT, D_RIGHT } rel_dir_t;
 
 class taxi_value
 {
+public:
 	typedef enum { T_NUM, T_STR } value_type;
-
 	value_type	val_type;
 	double		num_val;
 	string		str_val;
 
-public:
 	taxi_value()				{ clear(); }
 	taxi_value( double n ) 			{ set_num(n); }
 	taxi_value( const string& s ) 		{ set_str(s); }
@@ -131,7 +130,7 @@ public:
 typedef list<passenger_t> passenger_list;
 
 
-class taxi 
+class taxi
 {
 public:
 	passenger_list passengers;
@@ -403,9 +402,31 @@ void taxi::pickup_passenger( location* whereto )
 		error( "too many passengers in the taxi" );
 
 	passengers.push_back( passenger_t(current_location->get_outgoing_passenger(),whereto) );
+
+	if( debuglevel >= 1) {
+		cout << "Passengers of the taxi: ";
+		for (auto passenger : passengers) {
+			if (passenger.value.val_type == taxi_value::T_NUM)
+				cout << "[" << passenger.value.num_val << "]";
+			else
+				cout << "[" << passenger.value.str_val << "]";
+		}
+		cout << endl;
+	}
 }
 
 void taxi::drive() {
+	if( debuglevel >= 3) {
+		cout << "Passengers of the taxi: ";
+		for (auto passenger : passengers) {
+			if (passenger.value.val_type == taxi_value::T_NUM)
+				cout << "[" << passenger.value.num_val << "]";
+			else
+				cout << "[" << passenger.value.str_val << "]";
+		}
+		cout << endl;
+	}
+
 	if( !next_node )
 		error( "cannot drive in that direction" );
 	node* t = next_node->get_straight_path( current_node );
@@ -766,7 +787,7 @@ void chop_suey( location& here, incoming_list& incoming )
 {
 	while( !incoming.empty() ) {
 		taxi_value v = incoming.next();
-		if( !v.is_string() ) 
+		if( !v.is_string() )
 			error( "requires a string value" );
 		for( size_t i=0; i<v.str().length(); i++ )
 			here.add_outgoing_passenger( taxi_value( string(1,v.str()[i]) ) );
@@ -786,17 +807,24 @@ void crime_lab( location& here, incoming_list& incoming )
 		return;
 	}
 
+	bool equal = true;
 	do {
 		taxi_value tmp = incoming.next();
 		if( !tmp.is_string() ) {
 			error( "requires a string value" );
 			return;
 		}
-		if( v.str() != tmp.str() )
-			return;
+		if (debuglevel >= 2) cout << "crime lab: check if " << v.str() << " != " << tmp.str() << " -> ";
+		if( v.str() != tmp.str() ) {
+			// BUG: not all of the passengers got removed from the taxi
+			if (debuglevel >= 2) cout << "true" << endl;
+			equal = false;
+		}
+		if (debuglevel >= 2) cout << "false" << endl;
 	} while( !incoming.empty() );
 
-	here.add_outgoing_passenger( v );
+	if(equal)
+		here.add_outgoing_passenger( v );
 }
 
 void equals_corner( location& here, incoming_list& incoming )
@@ -1086,7 +1114,7 @@ public:
 			error( "parse error: likely incomplete statement" );
 	}
 
-	void compile( vector<string>& in ) { 
+	void compile( vector<string>& in ) {
 		code_t c;
 		// is waiting at...
 		if( in.size()>=5 && in[1]=="is" && in[2]=="waiting" && in[3]=="at" ) {
@@ -1280,4 +1308,3 @@ int main( int argc, char** argv )
 	error( "The boss couldn't find your taxi in the garage.  You're fired!" );
 	return -1;
 }
-
